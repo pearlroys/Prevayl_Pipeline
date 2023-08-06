@@ -4,6 +4,7 @@
 # Project Overview
 
 In this project, I undertook the task of scraping data from the Prevayl website, a medical fitness company that helps track the vitals of users while exercising. The data scraping process was carried out using the Scrapy web scraping framework and Beautiful Soup for parsing the web content. The primary goal was to collect valuable exercise-related data from the website, which would later be processed, transformed, and stored for further analysis.
+
 <img width="1223" alt="Screenshot 2023-08-06 at 14 08 46" src="https://github.com/pearlroys/prevayl_pipeline/assets/103274172/e754e0b0-8f1f-41c5-ad40-446a907c5396">
 
 # Data Scraping Process
@@ -35,9 +36,11 @@ Throughout the data scraping process, I encountered several challenges and bugs 
 - **CPU Usage**: Initially, I faced issues with high CPU usage when running the Scrapy spiders. The website's large size and complexity contributed to this problem. To mitigate this, I implemented optimizations in the code, such as limiting the number of concurrent requests and adding delays between requests.
 
 - **AWS S3 Access**: During the development of the data pipeline, I overlooked granting the necessary IAM role access to the S3 bucket. Consequently, the data upload to the S3 bucket via Airflow DAGs failed. Upon identification, I quickly rectified this by configuring the IAM role to permit the required actions, enabling smooth data transfer to the S3 bucket.
-- <img width="1358" alt="Screenshot 2023-07-28 at 08 18 08" src="https://github.com/pearlroys/prevayl_pipeline/assets/103274172/eb7630b5-3792-4517-8e07-e2e163fa99d6">
+
+<img width="1419" alt="Screenshot 2023-07-28 at 08 30 06" src="https://github.com/pearlroys/prevayl_pipeline/assets/103274172/b38467c7-6378-4d20-a6fd-d5022fc1b624">
 
 <img width="1399" alt="Screenshot 2023-07-28 at 08 28 44" src="https://github.com/pearlroys/prevayl_pipeline/assets/103274172/2da23eec-7753-4bf3-aba7-f1fcf46b6cf1">
+
 <img width="821" alt="Screenshot 2023-08-06 at 14 15 09" src="https://github.com/pearlroys/prevayl_pipeline/assets/103274172/6e7e8582-426f-4958-a1fb-3e173423784c">
 
 # Data Pipeline and Automation
@@ -52,6 +55,7 @@ To automate the scraping process and ensure daily updates of the data, I created
 - After extracting data using Scrapy and Beautiful Soup, I processed and transformed it into CSV format.
 - Using Pandas, I converted the CSV data into a DataFrame, making it easier to handle and analyze the information.
 - Finally, I automated the process of uploading the DataFrame to an AWS S3 bucket through the Airflow DAGs.
+- 
 <img width="964" alt="Screenshot 2023-07-28 at 08 31 53" src="https://github.com/pearlroys/prevayl_pipeline/assets/103274172/011afe44-70a8-4a2e-bfd6-270337d0a6e4">
 ## 3. Daily Automation
 
